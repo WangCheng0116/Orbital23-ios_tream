@@ -81,7 +81,6 @@ struct SingleTripView: View {
     }
 }
 
-
 struct SingleTripView_Previews: PreviewProvider {
     static var previews: some View {
         SingleTripView(title: "Exploring the Beach",

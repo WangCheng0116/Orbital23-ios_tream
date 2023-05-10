@@ -66,7 +66,6 @@ struct MainInterfaceView: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        
     }
 }
 

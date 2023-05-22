@@ -10,26 +10,14 @@ struct MainInterfaceView: View {
         NavigationView {
             VStack {
                 List {
-                    SingleTripView(title: "Exploring the Beach",
-                        destination: "Bali, Indonesia",
-                        description: "Enjoy the sunny beaches and explore the rich Balinese culture.",
-                        imageName: "bali",
-                        date: "June 10 - June 20, 2023",
-                        price: 2000.00)
-                    
-                    SingleTripView(title: "Exploring the Beach",
-                        destination: "Bali, Indonesia",
-                        description: "Enjoy the sunny beaches and explore the rich Balinese culture.",
-                        imageName: "bali",
-                        date: "June 10 - June 20, 2023",
-                        price: 2000.00)
-                    
-                    SingleTripView(title: "Exploring the Beach",
-                        destination: "Bali, Indonesia",
-                        description: "Enjoy the sunny beaches and explore the rich Balinese culture.",
-                        imageName: "bali",
-                        date: "June 10 - June 20, 2023",
-                        price: 2000.00)
+                    NavigationLink(destination: DetailedTripView()) {
+                        SingleTripView(title: "Exploring the Beach",
+                                       destination: "Bali, Indonesia",
+                                       description: "Enjoy the sunny beaches and explore the rich Balinese culture.",
+                                       imageName: "bali",
+                                       date: "June 10 - June 20, 2023",
+                                       price: 2000.00)
+                    }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .listStyle(.plain)

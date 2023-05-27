@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CD62153D2A1B0C6700CE5719 /* DetailedTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD62153C2A1B0C6700CE5719 /* DetailedTripView.swift */; };
+		CD62153F2A20E4CF00CE5719 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD62153E2A20E4CF00CE5719 /* SignInView.swift */; };
+		CD6215412A20EB3F00CE5719 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD6215402A20EB3F00CE5719 /* GoogleService-Info.plist */; };
 		CD946EBD2A0BE1D900E0DBC1 /* MainInterfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD946EBC2A0BE1D900E0DBC1 /* MainInterfaceView.swift */; };
 		CD946EBF2A0BE6D000E0DBC1 /* SingleTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD946EBE2A0BE6D000E0DBC1 /* SingleTripView.swift */; };
 		CD946EC12A0BECF200E0DBC1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD946EC02A0BECF200E0DBC1 /* SettingsView.swift */; };
@@ -19,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		CD62153C2A1B0C6700CE5719 /* DetailedTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedTripView.swift; sourceTree = "<group>"; };
+		CD62153E2A20E4CF00CE5719 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		CD6215402A20EB3F00CE5719 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CD946EBC2A0BE1D900E0DBC1 /* MainInterfaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInterfaceView.swift; sourceTree = "<group>"; };
 		CD946EBE2A0BE6D000E0DBC1 /* SingleTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTripView.swift; sourceTree = "<group>"; };
 		CD946EC02A0BECF200E0DBC1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -65,6 +69,8 @@
 				CD946EBE2A0BE6D000E0DBC1 /* SingleTripView.swift */,
 				CD946EC02A0BECF200E0DBC1 /* SettingsView.swift */,
 				CD62153C2A1B0C6700CE5719 /* DetailedTripView.swift */,
+				CD62153E2A20E4CF00CE5719 /* SignInView.swift */,
+				CD6215402A20EB3F00CE5719 /* GoogleService-Info.plist */,
 				CDF380A52A09E563005619CA /* Assets.xcassets */,
 				CDF380A72A09E563005619CA /* Preview Content */,
 			);
@@ -123,6 +129,8 @@
 				Base,
 			);
 			mainGroup = CDF380952A09E562005619CA;
+			packageReferences = (
+			);
 			productRefGroup = CDF3809F2A09E562005619CA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,6 +147,7 @@
 			files = (
 				CDF380A92A09E563005619CA /* Preview Assets.xcassets in Resources */,
 				CDF380A62A09E563005619CA /* Assets.xcassets in Resources */,
+				CD6215412A20EB3F00CE5719 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD946EC12A0BECF200E0DBC1 /* SettingsView.swift in Sources */,
+				CD62153F2A20E4CF00CE5719 /* SignInView.swift in Sources */,
 				CD62153D2A1B0C6700CE5719 /* DetailedTripView.swift in Sources */,
 				CD946EBD2A0BE1D900E0DBC1 /* MainInterfaceView.swift in Sources */,
 				CDF380A42A09E562005619CA /* ContentView.swift in Sources */,

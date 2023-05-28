@@ -4,7 +4,7 @@ import SwiftUI
 struct itineraryApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainInterfaceView()
         }
     }
 }

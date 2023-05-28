@@ -8,6 +8,7 @@ struct SettingsView: View {
     let currencies = ["USD", "EUR", "GBP", "JPY", "CNY", "SGD"]
     @State private var selectedCurrency = "USD"
     @State private var isFeedbackPresented = false
+    @State private var isLoginPresented = false
     @State private var feedbackText = ""
     
     var body: some View {
@@ -15,7 +16,7 @@ struct SettingsView: View {
             List {
                 Section(header: Text("ACCOUNT")) {
                     Button(action: {
-                        // present login view
+                        isLoginPresented.toggle()
                     }) {
                         HStack {
                             Image(systemName: "cloud.fill")
@@ -26,8 +27,11 @@ struct SettingsView: View {
                                 .font(.system(size: 18))
                                 .fontWeight(.semibold)
                                 
+                                }
                         }
-                                        }
+                    .sheet(isPresented: $isLoginPresented) {
+                        LoginView()
+                    }
                 }
                 
                 Section(header: Text("PREFERENCES")) {

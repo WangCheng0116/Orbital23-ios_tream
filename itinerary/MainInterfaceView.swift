@@ -5,6 +5,7 @@ import SwiftUI
 struct MainInterfaceView: View {
     @State var isSettingsPresented: Bool = false
     @State var isAddingPresented: Bool = false
+    @State var showSignInView: Bool 
     
     var body: some View {
         NavigationView {
@@ -27,14 +28,23 @@ struct MainInterfaceView: View {
             .toolbar {
                 //button for directing to settins
                 ToolbarItem (placement: .navigationBarTrailing){
-                    Button {
-                        isSettingsPresented.toggle()
-                    } label: {
-                        Image(systemName: "gear")
-                            .foregroundColor(Color.orange)
-                            .frame(width: 25, height: 25)
-                            .offset(y: 15)
-                    }
+//                    Button {
+//                        isSettingsPresented.toggle()
+//                    } label: {
+//                        Image(systemName: "gear")
+//                            .foregroundColor(Color.orange)
+//                            .frame(width: 25, height: 25)
+//                            .offset(y: 15)
+//                    }
+                    HStack {
+                           Text("")
+                        NavigationLink(destination: SettingsViewSignOut(showSignInView: $showSignInView)) {
+                                Image(systemName: "gear")
+                                    .foregroundColor(Color.orange)
+                                    .frame(width: 25, height: 25)
+                                    .offset(y: 15)
+                                    }
+                                }
                 }
                 
                 //button for directing to adding trips
@@ -49,9 +59,7 @@ struct MainInterfaceView: View {
                     }
                 }
             }
-            .sheet(isPresented: $isSettingsPresented) {
-                            SettingsView()
-            }
+            
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
@@ -59,6 +67,6 @@ struct MainInterfaceView: View {
 
 struct MainInterfaceView_Previews: PreviewProvider {
     static var previews: some View {
-        MainInterfaceView()
+        MainInterfaceView(showSignInView: false)
     }
 }

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>222014001266-4palhonbe38biaj6k5hb6nqpf0u1cuqt.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.222014001266-4palhonbe38biaj6k5hb6nqpf0u1cuqt</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDYQykFTWa_iH9r8SEwcPYeHKMqKbaBNGM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>222014001266</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>io.Orbital23.itinerary</string>
+	<key>PROJECT_ID</key>
+	<string>orbital-ms1</string>
+	<key>STORAGE_BUCKET</key>
+	<string>orbital-ms1.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:222014001266:ios:a9cc04c96884c48d5bb2eb</string>
+</dict>
+</plist>

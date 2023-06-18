@@ -5,7 +5,8 @@ import SwiftUI
 struct MainInterfaceView: View {
     @State var isSettingsPresented: Bool = false
     @State var isAddingPresented: Bool = false
-    @State var showSignInView: Bool 
+    @Binding var showSignInView: Bool
+
     
     var body: some View {
         NavigationView {
@@ -38,7 +39,8 @@ struct MainInterfaceView: View {
 //                    }
                     HStack {
                            Text("")
-                        NavigationLink(destination: SettingsViewSignOut(showSignInView: $showSignInView)) {
+                        NavigationLink(destination: SettingsViewSignOut(
+                            showSignInView: $showSignInView)) {
                                 Image(systemName: "gear")
                                     .foregroundColor(Color.orange)
                                     .frame(width: 25, height: 25)
@@ -67,6 +69,6 @@ struct MainInterfaceView: View {
 
 struct MainInterfaceView_Previews: PreviewProvider {
     static var previews: some View {
-        MainInterfaceView(showSignInView: false)
+        MainInterfaceView(showSignInView: .constant(false))
     }
 }

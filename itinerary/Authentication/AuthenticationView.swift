@@ -10,7 +10,6 @@ import SwiftUI
 struct AuthenticationView: View {
     
     @Binding var showSignInView: Bool
-    //@Binding var showSignInEAView: Bool
     
     var body: some View {
         
@@ -32,22 +31,11 @@ struct AuthenticationView: View {
                     .padding()
                     
                 
-                NavigationLink {
-                    SignInEmailView(showSignInView: $showSignInView)
-                } label: {
-                    Text("Sign In With Email")
-                        .font(.headline)
-                        .foregroundColor(Color.white)
-                        .frame(height: 55)
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                }
-                
 //                NavigationLink {
-//                    SignInExistingAccountView( showSignInEAView: $showSignInEAView)
+//                    //SignInEmailView(showSignInView: $showSignInView)
+//                    SignUpView( showSignUpView: $showSignUpView)
 //                } label: {
-//                    Text("Sign In to Existing Account")
+//                    Text("Sign Up With Email")
 //                        .font(.headline)
 //                        .foregroundColor(Color.white)
 //                        .frame(height: 55)
@@ -55,6 +43,18 @@ struct AuthenticationView: View {
 //                        .background(Color.blue)
 //                        .cornerRadius(10)
 //                }
+//
+                NavigationLink {
+                    SignInEmailView(showSignInView: $showSignInView)
+                } label: {
+                    Text("Sign In with Email")
+                        .font(.headline)
+                        .foregroundColor(Color.white)
+                        .frame(height: 55)
+                        .frame(maxWidth: .infinity)
+                        .background(Color.blue)
+                        .cornerRadius(10)
+                }
                 
             }
             
@@ -67,8 +67,7 @@ struct AuthenticationView: View {
 struct AuthenticationView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            AuthenticationView(showSignInView: .constant(false)
-            )
+            AuthenticationView(showSignInView: .constant(false))
         }
     }
 }

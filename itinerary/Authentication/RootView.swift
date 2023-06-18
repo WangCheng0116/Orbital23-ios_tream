@@ -10,12 +10,12 @@ import SwiftUI
 struct RootView: View {
    
     @State private var showSignInView: Bool = false
-    //@State private var showSignInEAView: Bool = false
     
     var body: some View {
         ZStack {
             NavigationStack {
-                MainInterfaceView(showSignInView: showSignInView)
+                MainInterfaceView(showSignInView: $showSignInView)
+                //SettingsViewSignOut(showSignInView: $showSignInView)
             }
             
         }

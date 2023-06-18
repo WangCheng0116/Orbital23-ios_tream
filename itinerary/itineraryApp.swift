@@ -11,7 +11,7 @@ struct itineraryApp: App {
     
     var body: some Scene {
         WindowGroup {
-            SignInView()
+                RootView()
         }
     }
 }

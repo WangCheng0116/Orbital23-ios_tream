@@ -12,6 +12,7 @@ struct itineraryApp: App {
     var body: some Scene {
         WindowGroup {
                 RootView()
+            //MapRootView()
         }
     }
 }

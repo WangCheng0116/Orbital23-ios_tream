@@ -13,6 +13,7 @@ struct itineraryApp: App {
         WindowGroup {
                 RootView()
             //MapRootView()
+          
         }
     }
 }

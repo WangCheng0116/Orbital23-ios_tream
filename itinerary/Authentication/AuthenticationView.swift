@@ -31,19 +31,19 @@ struct AuthenticationView: View {
                     .padding()
                     
                 
-//                NavigationLink {
-//                    //SignInEmailView(showSignInView: $showSignInView)
-//                    SignUpView( showSignUpView: $showSignUpView)
-//                } label: {
-//                    Text("Sign Up With Email")
-//                        .font(.headline)
-//                        .foregroundColor(Color.white)
-//                        .frame(height: 55)
-//                        .frame(maxWidth: .infinity)
-//                        .background(Color.blue)
-//                        .cornerRadius(10)
-//                }
-//
+                NavigationLink {
+                    //SignInEmailView(showSignInView: $showSignInView)
+                    SignUpView( showSignInView: $showSignInView)
+                } label: {
+                    Text("Sign Up With Email")
+                        .font(.headline)
+                        .foregroundColor(Color.white)
+                        .frame(height: 55)
+                        .frame(maxWidth: .infinity)
+                        .background(Color.blue)
+                        .cornerRadius(10)
+                }
+
                 NavigationLink {
                     SignInEmailView(showSignInView: $showSignInView)
                 } label: {

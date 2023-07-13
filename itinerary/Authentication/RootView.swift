@@ -14,8 +14,9 @@ struct RootView: View {
     var body: some View {
         ZStack {
             NavigationStack {
-                MainInterfaceView(showSignInView: $showSignInView)
+                //HomeView(showSignInView: $showSignInView)
                 //SettingsViewSignOut(showSignInView: $showSignInView)
+               ProfileView(showSignInView: $showSignInView)
             }
             
         }

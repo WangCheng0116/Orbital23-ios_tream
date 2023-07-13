@@ -1,45 +1,15 @@
 //
-//  SignInEmailView.swift
+//  SignInNewAccountView.swift
 //  itinerary
 //
-//  Created by yuchenbo on 3/6/23.
+//  Created by yuchenbo on 28/6/23.
 //
 
 import SwiftUI
 
-@MainActor
-final class SignInEmailViewModel: ObservableObject {
-    
-    @Published var email = ""
-    @Published var password = ""
-    
-    
-    func SignUp() async throws {
-        guard !email.isEmpty, !password.isEmpty else {
-            print("No email or password found.")
-            return
-        }
-        let authDataResult = try await AuthenticationManager.shared.createUser(email: email, password: password)
-        
-        let user = DBUser(auth: authDataResult)
-        try await UserManager.shared.createNewUser(user: user)
-    }
-    
-    
-    func SignIn() async throws {
-        guard !email.isEmpty, !password.isEmpty else {
-            print("No email or password found.")
-            return
-        }
-        try await AuthenticationManager.shared.signInUser(email: email, password: password)
-    }
-    
-}
 
 
-
-
-struct SignInEmailView: View {
+struct SignUpView: View {
     
     @StateObject private var viewModel = SignInEmailViewModel()
     @Binding var showSignInView: Bool
@@ -48,6 +18,7 @@ struct SignInEmailView: View {
     var body: some View {
         
         ZStack {
+            
             Color.orange
                 .ignoresSafeArea()
             Circle()
@@ -57,11 +28,11 @@ struct SignInEmailView: View {
                 .scale(1.35)
                 .foregroundColor(.white)
             
-            
             VStack {
-                Text("Sign In With Email")
-                    .bold()
+                
+                Text("Sign Up With Email")
                     .font(.title)
+                    .bold()
                 
                 TextField("Email...", text: $viewModel.email)
                     .padding()
@@ -76,22 +47,18 @@ struct SignInEmailView: View {
                 Button(action: {
                     
                     Task {
-                        
                         do {
-                            print("reached signIn")
-                            try await viewModel.SignIn()
+                            try await viewModel.SignUp()
                             showSignInView = false
-                            print("completed signIn")
                             return
                         } catch {
+                            print("reached signUp")
                             showAlert = true
-                            print(error)
-                            
                         }
                         
                     }
                 }, label: {
-                    Text("Sign In")
+                    Text("Sign Up")
                         .font(.headline)
                         .foregroundColor(Color.white)
                         .frame(height: 55)
@@ -100,23 +67,24 @@ struct SignInEmailView: View {
                         .cornerRadius(10)
                 })
                 
-                Spacer()
+               
             }
             .padding()
-            //.navigationTitle("Sign In With Email")
+            //.navigationTitle("Sign Up With Email")
             .alert(isPresented: $showAlert) {
-                Alert(title: Text("Account Doesn't Exist"),
-                      message: Text("Please sign up for an account first."),
+                Alert(title: Text("Account Already Exist!"),
+                      message: Text("Please login to your existing account."),
                       dismissButton: .default(Text("OK")))
             }
+            
         }
     }
 }
 
-struct SignInEmailView_Previews: PreviewProvider {
+struct SignUp_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            SignInEmailView(showSignInView: .constant(false))
+            SignUpView(showSignInView: .constant(false))
         }
     }
 }

@@ -1,0 +1,6 @@
+framework module Pods_itinerary_itineraryUITests {
+  umbrella header "Pods-itinerary-itineraryUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

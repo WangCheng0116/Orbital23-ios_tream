@@ -11,7 +11,8 @@ struct Temp: View {
     var body: some View {
        
         
-        Text("Temp")
+        CreateTripView()
+            .environmentObject(TripManager())
     }
 }
 

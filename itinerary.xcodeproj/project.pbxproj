@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61ECFA4E8F1B5A08514213A4 /* Pods_itinerary_itineraryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C49FF380BEBE135BC7650B /* Pods_itinerary_itineraryUITests.framework */; };
+		7B047AEE2A6A6B390026EB8C /* ExpenseTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B047AED2A6A6B390026EB8C /* ExpenseTracker.swift */; };
+		7B047AF02A6A6B720026EB8C /* ExpenseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B047AEF2A6A6B720026EB8C /* ExpenseList.swift */; };
+		7B047AF22A6A6BCF0026EB8C /* ExpenseSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B047AF12A6A6BCF0026EB8C /* ExpenseSummaryView.swift */; };
+		7B047AF42A6A6BDB0026EB8C /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B047AF32A6A6BDB0026EB8C /* Expense.swift */; };
+		7B047AF62A6A6BE60026EB8C /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B047AF52A6A6BE60026EB8C /* AddExpenseView.swift */; };
+		7B047AF82A6A6BF20026EB8C /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B047AF72A6A6BF20026EB8C /* BarChart.swift */; };
 		7B04876B2A47402500148974 /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B04876A2A47402500148974 /* Temp.swift */; };
 		7B0B82D02A46A153005DB014 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0B82CF2A46A153005DB014 /* SearchView.swift */; };
 		7B0B82D22A46A19D005DB014 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0B82D12A46A19D005DB014 /* LocationManager.swift */; };
@@ -42,6 +49,7 @@
 		7BFB36B82A5E3F7E009B38AF /* EditingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB36B72A5E3F7E009B38AF /* EditingPage.swift */; };
 		7BFB36BA2A5E3F86009B38AF /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB36B92A5E3F86009B38AF /* UserData.swift */; };
 		7BFB36BC2A5E423C009B38AF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB36BB2A5E423C009B38AF /* HomeView.swift */; };
+		8FC7DCFD1B849EEA28A8C88C /* Pods_itinerary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6822E8D9314F8B3CB0717B /* Pods_itinerary.framework */; };
 		CDF380A22A09E562005619CA /* itineraryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF380A12A09E562005619CA /* itineraryApp.swift */; };
 		CDF380A62A09E563005619CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDF380A52A09E563005619CA /* Assets.xcassets */; };
 		CDF380A92A09E563005619CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDF380A82A09E563005619CA /* Preview Assets.xcassets */; };
@@ -58,6 +66,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14C49FF380BEBE135BC7650B /* Pods_itinerary_itineraryUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_itinerary_itineraryUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B98C923861D7CBAEE932189 /* Pods-itinerary-itineraryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itinerary-itineraryUITests.release.xcconfig"; path = "Target Support Files/Pods-itinerary-itineraryUITests/Pods-itinerary-itineraryUITests.release.xcconfig"; sourceTree = "<group>"; };
+		48DD83E4008B768136AC8CCE /* Pods-itinerary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itinerary.debug.xcconfig"; path = "Target Support Files/Pods-itinerary/Pods-itinerary.debug.xcconfig"; sourceTree = "<group>"; };
+		7B047AED2A6A6B390026EB8C /* ExpenseTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseTracker.swift; sourceTree = "<group>"; };
+		7B047AEF2A6A6B720026EB8C /* ExpenseList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseList.swift; sourceTree = "<group>"; };
+		7B047AF12A6A6BCF0026EB8C /* ExpenseSummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseSummaryView.swift; sourceTree = "<group>"; };
+		7B047AF32A6A6BDB0026EB8C /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		7B047AF52A6A6BE60026EB8C /* AddExpenseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
+		7B047AF72A6A6BF20026EB8C /* BarChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
 		7B04876A2A47402500148974 /* Temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
 		7B0B82CF2A46A153005DB014 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		7B0B82D12A46A19D005DB014 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -68,6 +85,7 @@
 		7B116B952A2DE68700223118 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		7B116B972A2DEDCF00223118 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		7B116B992A2DEF1100223118 /* SettingsViewSignOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewSignOut.swift; sourceTree = "<group>"; };
+		7B131F1E2A6C203000119B0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7B27BD482A29F6830003EE9F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7B8A60FB2A4BFFA000E50329 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		7BC191CD2A487DA500D84087 /* itineraryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = itineraryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,10 +100,13 @@
 		7BFB36B72A5E3F7E009B38AF /* EditingPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingPage.swift; sourceTree = "<group>"; };
 		7BFB36B92A5E3F86009B38AF /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		7BFB36BB2A5E423C009B38AF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		8D9016CB04A5921AD2175268 /* Pods-itinerary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itinerary.release.xcconfig"; path = "Target Support Files/Pods-itinerary/Pods-itinerary.release.xcconfig"; sourceTree = "<group>"; };
 		CDF3809E2A09E562005619CA /* itinerary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = itinerary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF380A12A09E562005619CA /* itineraryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itineraryApp.swift; sourceTree = "<group>"; };
 		CDF380A52A09E563005619CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDF380A82A09E563005619CA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EC6822E8D9314F8B3CB0717B /* Pods_itinerary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_itinerary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED1F2B11306783BCC57E13A6 /* Pods-itinerary-itineraryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itinerary-itineraryUITests.debug.xcconfig"; path = "Target Support Files/Pods-itinerary-itineraryUITests/Pods-itinerary-itineraryUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61ECFA4E8F1B5A08514213A4 /* Pods_itinerary_itineraryUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,12 +134,36 @@
 				7BF78A462A553D1F00FBBD6A /* FirebaseFirestore in Frameworks */,
 				7B27BD432A29F44A0003EE9F /* FirebaseFunctionsCombine-Community in Frameworks */,
 				7BF78A482A553D1F00FBBD6A /* FirebaseFirestoreSwift in Frameworks */,
+				8FC7DCFD1B849EEA28A8C88C /* Pods_itinerary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B047AEA2A6A6B020026EB8C /* Expense */ = {
+			isa = PBXGroup;
+			children = (
+				7B047AED2A6A6B390026EB8C /* ExpenseTracker.swift */,
+				7B047AEF2A6A6B720026EB8C /* ExpenseList.swift */,
+				7B047AF12A6A6BCF0026EB8C /* ExpenseSummaryView.swift */,
+				7B047AF32A6A6BDB0026EB8C /* Expense.swift */,
+				7B047AF52A6A6BE60026EB8C /* AddExpenseView.swift */,
+				7B047AF72A6A6BF20026EB8C /* BarChart.swift */,
+			);
+			path = Expense;
+			sourceTree = "<group>";
+		};
+		7B047AF92A6A6CBD0026EB8C /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				7BFB36B52A5E3F71009B38AF /* AddingView.swift */,
+				7BFB36B72A5E3F7E009B38AF /* EditingPage.swift */,
+				7BFB36B92A5E3F86009B38AF /* UserData.swift */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
 		7B0B82CC2A46A096005DB014 /* Map */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +189,13 @@
 				7B0B82D32A46A1DA005DB014 /* MapRootView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		7B131F202A6C2FBF00119B0F /* LeanCloudDatabase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LeanCloudDatabase;
 			sourceTree = "<group>";
 		};
 		7BC191CE2A487DA500D84087 /* itineraryUITests */ = {
@@ -172,6 +225,8 @@
 		7BF78A442A553D1F00FBBD6A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EC6822E8D9314F8B3CB0717B /* Pods_itinerary.framework */,
+				14C49FF380BEBE135BC7650B /* Pods_itinerary_itineraryUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -199,6 +254,7 @@
 				7BC191CE2A487DA500D84087 /* itineraryUITests */,
 				CDF3809F2A09E562005619CA /* Products */,
 				7BF78A442A553D1F00FBBD6A /* Frameworks */,
+				D7DFDF8A283F1EEAE74E46C8 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -214,14 +270,15 @@
 		CDF380A02A09E562005619CA /* itinerary */ = {
 			isa = PBXGroup;
 			children = (
+				7B131F202A6C2FBF00119B0F /* LeanCloudDatabase */,
+				7B131F1E2A6C203000119B0F /* Info.plist */,
+				7B047AF92A6A6CBD0026EB8C /* Activity */,
+				7B047AEA2A6A6B020026EB8C /* Expense */,
 				CDF380A12A09E562005619CA /* itineraryApp.swift */,
 				7B0B82D52A46CB9A005DB014 /* MainInterfaceView.swift */,
 				7BFB36BB2A5E423C009B38AF /* HomeView.swift */,
 				7B0B82D72A46CC8A005DB014 /* SingleTripView.swift */,
 				7B0B82D92A46CC93005DB014 /* CreateTripView.swift */,
-				7BFB36B52A5E3F71009B38AF /* AddingView.swift */,
-				7BFB36B72A5E3F7E009B38AF /* EditingPage.swift */,
-				7BFB36B92A5E3F86009B38AF /* UserData.swift */,
 				7BF78A4C2A554EBD00FBBD6A /* FireStore */,
 				7BF49C1B2A2AEAE3002A804D /* Authentication */,
 				7B0B82CC2A46A096005DB014 /* Map */,
@@ -240,6 +297,17 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		D7DFDF8A283F1EEAE74E46C8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				48DD83E4008B768136AC8CCE /* Pods-itinerary.debug.xcconfig */,
+				8D9016CB04A5921AD2175268 /* Pods-itinerary.release.xcconfig */,
+				ED1F2B11306783BCC57E13A6 /* Pods-itinerary-itineraryUITests.debug.xcconfig */,
+				2B98C923861D7CBAEE932189 /* Pods-itinerary-itineraryUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -247,9 +315,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7BC191D72A487DA500D84087 /* Build configuration list for PBXNativeTarget "itineraryUITests" */;
 			buildPhases = (
+				0B491B4ED8113921C90BDB7D /* [CP] Check Pods Manifest.lock */,
 				7BC191C92A487DA500D84087 /* Sources */,
 				7BC191CA2A487DA500D84087 /* Frameworks */,
 				7BC191CB2A487DA500D84087 /* Resources */,
+				29F53281E69561779A7863E5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -265,9 +335,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CDF380AC2A09E563005619CA /* Build configuration list for PBXNativeTarget "itinerary" */;
 			buildPhases = (
+				6ADC69C15BD7DECAF53F6225 /* [CP] Check Pods Manifest.lock */,
 				CDF3809A2A09E562005619CA /* Sources */,
 				CDF3809B2A09E562005619CA /* Frameworks */,
 				CDF3809C2A09E562005619CA /* Resources */,
+				BFB163099422ECC75EE8BA3C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -353,6 +425,87 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0B491B4ED8113921C90BDB7D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-itinerary-itineraryUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		29F53281E69561779A7863E5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-itinerary-itineraryUITests/Pods-itinerary-itineraryUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-itinerary-itineraryUITests/Pods-itinerary-itineraryUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-itinerary-itineraryUITests/Pods-itinerary-itineraryUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6ADC69C15BD7DECAF53F6225 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-itinerary-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFB163099422ECC75EE8BA3C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-itinerary/Pods-itinerary-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-itinerary/Pods-itinerary-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-itinerary/Pods-itinerary-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7BC191C92A487DA500D84087 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -372,6 +525,7 @@
 				7BFB36B82A5E3F7E009B38AF /* EditingPage.swift in Sources */,
 				7B0B82D62A46CB9A005DB014 /* MainInterfaceView.swift in Sources */,
 				7BFB36BA2A5E3F86009B38AF /* UserData.swift in Sources */,
+				7B047AF22A6A6BCF0026EB8C /* ExpenseSummaryView.swift in Sources */,
 				7B116B962A2DE68800223118 /* AuthenticationManager.swift in Sources */,
 				7B0B82D82A46CC8A005DB014 /* SingleTripView.swift in Sources */,
 				7B0B82D42A46A1DA005DB014 /* MapRootView.swift in Sources */,
@@ -379,10 +533,15 @@
 				7BF78A4E2A554EEB00FBBD6A /* UserManager.swift in Sources */,
 				CDF380A22A09E562005619CA /* itineraryApp.swift in Sources */,
 				7BF78A4B2A554ADE00FBBD6A /* ProfileView.swift in Sources */,
+				7B047AF62A6A6BE60026EB8C /* AddExpenseView.swift in Sources */,
 				7B8A60FC2A4BFFA000E50329 /* SignUpView.swift in Sources */,
 				7BFB36B62A5E3F71009B38AF /* AddingView.swift in Sources */,
 				7BFB36BC2A5E423C009B38AF /* HomeView.swift in Sources */,
+				7B047AF02A6A6B720026EB8C /* ExpenseList.swift in Sources */,
 				7B0B82D02A46A153005DB014 /* SearchView.swift in Sources */,
+				7B047AF82A6A6BF20026EB8C /* BarChart.swift in Sources */,
+				7B047AEE2A6A6B390026EB8C /* ExpenseTracker.swift in Sources */,
+				7B047AF42A6A6BDB0026EB8C /* Expense.swift in Sources */,
 				7B04876B2A47402500148974 /* Temp.swift in Sources */,
 				7BF49C1D2A2AEB1E002A804D /* AuthenticationView.swift in Sources */,
 				7B0B82D22A46A19D005DB014 /* LocationManager.swift in Sources */,
@@ -404,6 +563,7 @@
 /* Begin XCBuildConfiguration section */
 		7BC191D52A487DA500D84087 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED1F2B11306783BCC57E13A6 /* Pods-itinerary-itineraryUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -420,6 +580,7 @@
 		};
 		7BC191D62A487DA500D84087 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B98C923861D7CBAEE932189 /* Pods-itinerary-itineraryUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -550,6 +711,7 @@
 		};
 		CDF380AD2A09E563005619CA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48DD83E4008B768136AC8CCE /* Pods-itinerary.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -558,6 +720,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"itinerary/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = itinerary/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -579,6 +742,7 @@
 		};
 		CDF380AE2A09E563005619CA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D9016CB04A5921AD2175268 /* Pods-itinerary.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -587,6 +751,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"itinerary/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = itinerary/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

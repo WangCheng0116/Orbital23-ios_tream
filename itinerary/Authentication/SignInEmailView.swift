@@ -20,6 +20,7 @@ final class SignInEmailViewModel: ObservableObject {
             return
         }
         let authDataResult = try await AuthenticationManager.shared.createUser(email: email, password: password)
+        //try await AuthenticationManager.shared.createUser(email: email, password: password)
         
         let user = DBUser(auth: authDataResult)
         try await UserManager.shared.createNewUser(user: user)
@@ -59,6 +60,8 @@ struct SignInEmailView: View {
             
             
             VStack {
+               
+                Spacer()
                 Text("Sign In With Email")
                     .bold()
                     .font(.title)

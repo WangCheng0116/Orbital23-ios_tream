@@ -62,7 +62,22 @@ final class AuthenticationManager {
         try await user.updateEmail(to: email)
     }
     
+    func updatePassword(email: String, password: String) async throws {
+        guard let user = Auth.auth().currentUser else {
+            throw URLError(.badServerResponse)
+        }
+        
+        try await user.updatePassword(to: password)
+    }
+    
     func signOut() throws {
+        
         try Auth.auth().signOut()
+        guard let user = Auth.auth().currentUser else {
+            print("Empty now!")
+            return
+        }
+        
+        print("\(String(describing: user.email))")
     }
 }

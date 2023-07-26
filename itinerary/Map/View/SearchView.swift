@@ -13,155 +13,128 @@ struct SearchView: View {
 
     @StateObject var locationManager: LocationManager = .init()
 
-    //navigationTag 跳转到mapview
+    //navigationTag jump to mapview
     @State var navigationTag: String?
     @State private var isNavigationActive = false
+    @Environment(\.presentationMode) var presentationMode
 
 
     var body: some View {
 
-        VStack {
+        NavigationView {
+            VStack {
 
-            HStack( spacing: 15) {
+                HStack( spacing: 15) {
 
-                Button {
-
-                } label: {
-
-                    Image(systemName: "chevron.left")
+                    Button{
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Image(systemName: "xmark")
+                            .font(.title3)
+                    }
+                    
+                    Text("Search Location")
                         .font(.title3)
-                        .foregroundColor(.primary)
+                        .fontWeight(.semibold)
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
 
-                Text("Search Location")
-                    .font(.title3)
-                    .fontWeight(.semibold)
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
+                HStack(spacing: 10) {
 
-            HStack(spacing: 10) {
+                    Image(systemName: "magnifyingglass")
+                        .foregroundColor(.gray)
 
-                Image(systemName: "magnifyingglass")
-                    .foregroundColor(.gray)
+                    TextField("Find locations here", text: $locationManager.searchText)
+                }
+                .padding(.vertical, 12)
+                .padding(.horizontal)
+                .background{
 
-                TextField("Find locations here", text: $locationManager.searchText)
-            }
-            .padding(.vertical, 12)
-            .padding(.horizontal)
-            .background{
-
-                RoundedRectangle(cornerRadius: 10, style: .continuous)
-                    .strokeBorder(.gray)
-            }
-            .padding(.vertical, 10)
+                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        .strokeBorder(.gray)
+                }
+                .padding(.vertical, 10)
 
 
-            if let places = locationManager.fetchedPlaces, !places.isEmpty {
+                if let places = locationManager.fetchedPlaces, !places.isEmpty {
 
-                List {
+                    List {
 
-                    ForEach(places, id: \.self) { place in
+                        ForEach(places, id: \.self) { place in
 
-                        Button {
+                            Button {
 
-                            if let coordinate = place.location?.coordinate {
+                                if let coordinate = place.location?.coordinate {
 
-                                locationManager.pickedLocation = .init(latitude: coordinate.latitude, longitude: coordinate.longitude)
-                                locationManager.mapView.region = .init(center: coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
+                                    locationManager.pickedLocation = .init(latitude: coordinate.latitude, longitude: coordinate.longitude)
+                                    locationManager.mapView.region = .init(center: coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
 
-                                locationManager.addDraggablePin(coordinate: coordinate)
-                                locationManager.updatePlacemark(location: .init(latitude: coordinate.latitude, longitude: coordinate.longitude))
-                            }
+                                    locationManager.addDraggablePin(coordinate: coordinate)
+                                    locationManager.updatePlacemark(location: .init(latitude: coordinate.latitude, longitude: coordinate.longitude))
+                                }
 
-                            //跳转到地图
-                            navigationTag = "MAPVIEW"
+        
+                                navigationTag = "MAPVIEW"
 
-                        } label: {
+                            } label: {
 
-                            HStack(spacing:15) {
+                                HStack(spacing:15) {
 
-                                Image(systemName: "mappin.circle.fill")
-                                    .font(.title2)
-                                    .foregroundColor(.gray)
-
-                                VStack(alignment: .leading, spacing: 6) {
-
-                                    Text(place.name ?? "")
-                                        .font(.title3.bold())
-                                        .foregroundColor(.primary)
-
-                                    Text(place.locality ?? "")
-                                        .font(.caption)
+                                    Image(systemName: "mappin.circle.fill")
+                                        .font(.title2)
                                         .foregroundColor(.gray)
+
+                                    VStack(alignment: .leading, spacing: 6) {
+
+                                        Text(place.name ?? "")
+                                            .font(.title3.bold())
+                                            .foregroundColor(.primary)
+
+                                        Text(place.locality ?? "")
+                                            .font(.caption)
+                                            .foregroundColor(.gray)
+                                    }
                                 }
                             }
+
                         }
-
                     }
+                    .listStyle(.plain)
                 }
-                .listStyle(.plain)
-            } else {
-
-//                Button {
+            }
+            .padding()
+            .frame(maxHeight: .infinity, alignment: .top)
+//            .background {
 //
-//                    if let coordinate = locationManager.userLocation?.coordinate {
+//                NavigationLink(tag: "MAPVIEW", selection: $navigationTag) {
 //
-//                        locationManager.mapView.region = .init(center: coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
-//
-//                        locationManager.addDraggablePin(coordinate: coordinate)
-//                        locationManager.updatePlacemark(location: .init(latitude: coordinate.latitude, longitude: coordinate.longitude))
-//
-//                        //跳转到地图
-//                        navigationTag = "MAPVIEW"
-//                    }
-//
-//
-//
+//                    MapViewSelection(navigationTag: $navigationTag)
+//                        .environmentObject(locationManager)
+//                        .navigationBarHidden(true)
 //                } label: {
 //
-//                    Label {
-//
-//                        Text("Use Current Location")
-//                            .font(.callout)
-//                    } icon: {
-//
-//                        Image(systemName: "location.north.circle.fill")
-//                    }
-//                    .foregroundColor(.green)
-//
 //                }
-//                .frame(maxWidth: .infinity, alignment: .leading)
-            }
-
-
-
-
-        }
-        .padding()
-        .frame(maxHeight: .infinity, alignment: .top)
-        .background {
-
-            NavigationLink(tag: "MAPVIEW", selection: $navigationTag) {
-
-                MapViewSelection(navigationTag: $navigationTag)
-                    .environmentObject(locationManager)
-                    .navigationBarHidden(true)
-            } label: {
-
-            }
-            .labelsHidden()
-
-        }
-        .background {
-            NavigationLink(
-                   destination: Temp(),
-                   tag: "TEMPVIEW",
-                   selection: $navigationTag
-               ) {
-                   EmptyView()
-               }
-               .hidden()
-
+//                .labelsHidden()
+//
+//
+//            }
+            .background {
+                            NavigationLink(
+                                destination: MapViewSelection(navigationTag: $navigationTag)
+                                    .environmentObject(locationManager),
+                                tag: "MAPVIEW",
+                                selection: $navigationTag
+                            ) {
+                                EmptyView()
+                            }
+                            .isDetailLink(false)
+                        }
+                        .onChange(of: isNavigationActive) { newValue in
+                            if !newValue {
+                                presentationMode.wrappedValue.dismiss()
+                            }
+                        }
+            
         }
 
     }
@@ -169,7 +142,9 @@ struct SearchView: View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        MapRootView()
+        NavigationStack {
+            MapRootView()
+        }
     }
 }
 
@@ -177,7 +152,9 @@ struct SearchView_Previews: PreviewProvider {
 //MARK: MapView Live Selection
 struct MapViewSelection: View {
 
+    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var locationManager: LocationManager
+    	
 
     @Environment(\.dismiss) var dismiss
 
@@ -209,7 +186,7 @@ struct MapViewSelection: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
 
 
-                //展示 大头针定位信息
+                //pin
                 if let place = locationManager.pickedPlaceMark {
 
                     VStack(spacing: 15) {
@@ -237,9 +214,8 @@ struct MapViewSelection: View {
 
 
                         Button {
-                            navigationTag = "TEMPVIEW"
+                            presentationMode.wrappedValue.dismiss()
                         } label: {
-
                             Text("Confirm Location")
                                 .fontWeight(.semibold)
                                 .frame(maxWidth: .infinity)
@@ -257,6 +233,29 @@ struct MapViewSelection: View {
                                 }
                                 .foregroundColor(.white)
                         }
+
+                            
+//                        Button {
+//                            navigationTag = "TEMPVIEW"
+//                        } label: {
+//
+//                            Text("Confirm Location")
+//                                .fontWeight(.semibold)
+//                                .frame(maxWidth: .infinity)
+//                                .padding(.vertical, 12)
+//                                .background{
+//
+//                                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+//                                        .fill(.green)
+//                                }
+//                                .overlay(alignment: .trailing){
+//
+//                                    Image(systemName: "arrow.right")
+//                                        .font(.title3.bold())
+//                                        .padding(.trailing)
+//                                }
+//                                .foregroundColor(.white)
+//                        }
 
 
                     }
@@ -278,6 +277,7 @@ struct MapViewSelection: View {
                 locationManager.pickedPlaceMark = nil
 
                 locationManager.mapView.removeAnnotations(locationManager.mapView.annotations)
+                navigationTag = nil
             }
         }
         .navigationBarBackButtonHidden(true)

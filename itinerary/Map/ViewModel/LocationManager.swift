@@ -9,7 +9,7 @@ import SwiftUI
 import CoreLocation
 import MapKit
 
-//使用combine去监测textfield的改变
+
 import Combine
 
 
@@ -18,15 +18,14 @@ class LocationManager: NSObject, ObservableObject, MKMapViewDelegate, CLLocation
     @Published var mapView: MKMapView = .init()
     @Published var manager: CLLocationManager = .init()
     
-    //搜索内容
     @Published var searchText: String = ""
     var cancellable: AnyCancellable?
     @Published var fetchedPlaces: [CLPlacemark]?
     
-    //用户位置
+    //userlocation
     @Published var userLocation: CLLocation?
     
-    //大头针移动后的位置
+    //place after pin
     @Published var pickedLocation: CLLocation?
     @Published var pickedPlaceMark: CLPlacemark?
     
@@ -34,14 +33,14 @@ class LocationManager: NSObject, ObservableObject, MKMapViewDelegate, CLLocation
         
         super.init()
         
-        //设置代理
+        
         manager.delegate = self
         mapView.delegate = self
         
-        //请求定位访问
+        
         manager.requestWhenInUseAuthorization()
         
-        //combine 搜索文本输入监控
+        //combine search text
         cancellable = $searchText
             .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
             .removeDuplicates()
@@ -60,7 +59,7 @@ class LocationManager: NSObject, ObservableObject, MKMapViewDelegate, CLLocation
     
     func fetchPlaces(value: String) {
         
-        //获取地名 使用  MKLocalSearch & Asyc/Await
+        //MKLocalSearch & Asyc/Await
         Task {
             
             do {
@@ -80,7 +79,7 @@ class LocationManager: NSObject, ObservableObject, MKMapViewDelegate, CLLocation
                 
             }
             catch {
-                //处理错误
+                
             }
         }
     }
@@ -88,7 +87,7 @@ class LocationManager: NSObject, ObservableObject, MKMapViewDelegate, CLLocation
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         
-        //处理错误
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -97,7 +96,6 @@ class LocationManager: NSObject, ObservableObject, MKMapViewDelegate, CLLocation
         self.userLocation = currentLocation
     }
     
-    // 定位权限认证
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         
         switch manager.authorizationStatus {
@@ -114,7 +112,6 @@ class LocationManager: NSObject, ObservableObject, MKMapViewDelegate, CLLocation
         
     }
     
-    //添加可以移动的大头针
     func addDraggablePin(coordinate: CLLocationCoordinate2D) {
         
         let annotation = MKPointAnnotation()
@@ -125,7 +122,7 @@ class LocationManager: NSObject, ObservableObject, MKMapViewDelegate, CLLocation
 
     }
     
-    //大头针的拖动实现
+    //move pin
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         let marker = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "DELIVERYRPIN")
@@ -167,7 +164,7 @@ class LocationManager: NSObject, ObservableObject, MKMapViewDelegate, CLLocation
         }
     }
     
-    //展示位置信息
+    //show location
     func reverseLocationCoordinates(location: CLLocation) async throws -> CLPlacemark? {
         
         let place = try await CLGeocoder().reverseGeocodeLocation(location).first

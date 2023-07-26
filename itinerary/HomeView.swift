@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import LeanCloud
 
 struct HomeView: View {
     @Binding var showSignInView: Bool
+    //let currentUser: LCUser
+    
     var body: some View {
         
         
@@ -19,7 +22,7 @@ struct HomeView: View {
                 MainInterfaceView(showSignInView: $showSignInView)
             }
             .tabItem {
-                Image(systemName: "1.circle")
+                Image(systemName: "suitcase.fill")
                 Text("Trips")
             }
             
@@ -29,19 +32,17 @@ struct HomeView: View {
                 AddingView()
             }
             .tabItem {
-                Image(systemName: "2.circle")
+                Image(systemName: "list.bullet.clipboard")
                 Text("Activities")
             }
             
             // Third tab
             NavigationView {
-                // Your third view
-                Text("Third View")
-                    .navigationTitle("Third")
+                ExpenseView()
             }
             .tabItem {
-                Image(systemName: "3.circle")
-                Text("Third")
+                Image(systemName: "dollarsign.circle")
+                Text("Expenses")
             }
             
            
@@ -60,8 +61,8 @@ struct HomeView: View {
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView(showSignInView: .constant(false))
-    }
-}
+//struct HomeView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HomeView(showSignInView: .constant(false), currentUser: <#LCUser#>)
+//    }
+//}

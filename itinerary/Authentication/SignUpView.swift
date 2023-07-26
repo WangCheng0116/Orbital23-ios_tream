@@ -81,10 +81,10 @@ struct SignUpView: View {
     }
 }
 
-struct SignUp_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationStack {
-            SignUpView(showSignInView: .constant(false))
-        }
-    }
-}
+//struct SignUp_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NavigationStack {
+//            SignUpView(showSignInView: .constant(false))
+//        }
+//    }
+//}

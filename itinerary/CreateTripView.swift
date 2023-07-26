@@ -2,18 +2,18 @@ import SwiftUI
 
 class TripManager: ObservableObject {
     @Published var trips: [SingleTrip] = []
-    
+
     init() {
         loadTrips()
     }
-    
+
     func saveTrips() {
         let encoder = JSONEncoder()
         if let encodedData = try? encoder.encode(trips) {
             UserDefaults.standard.set(encodedData, forKey: "trips")
         }
     }
-    
+
     func loadTrips() {
         if let encodedData = UserDefaults.standard.data(forKey: "trips") {
             let decoder = JSONDecoder()
@@ -25,10 +25,13 @@ class TripManager: ObservableObject {
 }
 
 
+
+
+
 struct CreateTripView: View {
     @EnvironmentObject var tripManager: TripManager
     @Environment(\.presentationMode) var presentationMode
-    
+
     @State private var title: String = ""
     @State private var destination: String = ""
     @State private var description: String = ""
@@ -38,49 +41,64 @@ struct CreateTripView: View {
     @State private var showAlert = false
     @State private var selectedImage: UIImage?
     @State private var isShowingImagePicker = false
-    
+    @State private var isShowingSearchView = false
+
     var body: some View {
         NavigationView {
-            Form {
-                Section(header: Text("Trip Details")) {
-                    TextField("Title", text: $title)
-                    TextField("Destination", text: $destination)
-                    TextField("Description", text: $description)
-                }
-                
-                Section(header: Text("Date")) {
-                    DatePicker("Start Date", selection: $startDate, in: Date()...)
-                    DatePicker("End Date", selection: $endDate, in: startDate...)
-                }
-                
-                Section(header: Text("Image")) {
-                                    Button(action: {
-                                        isShowingImagePicker = true
-                                    }) {
-                                        VStack {
-                                            if let image = selectedImage {
-                                                Image(uiImage: image)
-                                                    .resizable()
-                                                    .scaledToFill()
-                                                    .frame(height: 200)
-                                                    .clipped()
-                                            } else {
-                                                Image(systemName: "photo")
-                                                    .resizable()
-                                                    .aspectRatio(contentMode: .fit)
-                                              
-                                                    .frame(width: 60, height: 60)
-                                            }
-                                        }
-                                    }
-                                    .sheet(isPresented: $isShowingImagePicker) {
-                                        ImagePicker(selectedImage: $selectedImage)
-                                    }
+            VStack {
+
+                Form {
+                    Section(header: Text("Map")) {
+                        Button {
+                            isShowingSearchView = true
+                        } label: {
+                            Text("Show Map")
+                        }
+                        .sheet(isPresented: $isShowingSearchView) {
+                            SearchView()
+                        }
+                    }
+
+                    Section(header: Text("Trip Details")) {
+                        TextField("Title", text: $title)
+                        TextField("Destination", text: $destination)
+                        TextField("Description", text: $description)
+                    }
+
+                    Section(header: Text("Date")) {
+                        DatePicker("Start Date", selection: $startDate, in: Date()...)
+                        DatePicker("End Date", selection: $endDate, in: startDate...)
+                    }
+
+                    Section(header: Text("Image")) {
+                        Button(action: {
+                            isShowingImagePicker = true
+                        }) {
+                            VStack {
+                                if let image = selectedImage {
+                                    Image(uiImage: image)
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(height: 200)
+                                        .clipped()
+                                } else {
+                                    Image(systemName: "photo")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+
+                                        .frame(width: 60, height: 60)
                                 }
-                
-                Section(header: Text("Budget")) {
-                    TextField("Budget", value: $budget, formatter: NumberFormatter())
-                        .keyboardType(.decimalPad)
+                            }
+                        }
+                        .sheet(isPresented: $isShowingImagePicker) {
+                            ImagePicker(selectedImage: $selectedImage)
+                        }
+                    }
+
+                    Section(header: Text("Budget")) {
+                        TextField("Budget", value: $budget, formatter: NumberFormatter())
+                            .keyboardType(.decimalPad)
+                    }
                 }
             }
             .navigationBarTitle("Create Trip")
@@ -95,7 +113,7 @@ struct CreateTripView: View {
                                                  endDate: endDate,
                                                  budget: budget,
                         image: selectedImage)
-                        
+
                         tripManager.trips.append(newTrip)
                         presentationMode.wrappedValue.dismiss()
                     } else {
@@ -112,15 +130,146 @@ struct CreateTripView: View {
             }
         }
     }
-    
+
     private func validateInput() -> Bool {
         if title.isEmpty || destination.isEmpty || description.isEmpty || budget <= 0 {
             return false
         }
-        
+
         return true
     }
 }
+
+
+//
+//struct CreateTripView: View {
+//    @Environment(\.presentationMode) var presentationMode
+//
+//    @State private var title: String = ""
+//    @State private var destination: String = ""
+//    @State private var description: String = ""
+//    @State private var startDate: Date = Date()
+//    @State private var endDate: Date = Date()
+//    @State private var budget: Double = 0.0
+//    @State private var showAlert = false
+//    @State private var selectedImage: UIImage?
+//    @State private var isShowingImagePicker = false
+//    @State private var isShowingSearchView = false
+//
+//    
+//    @StateObject var tripManager = TripManager.sharedTrip
+//    
+//
+//    var body: some View {
+//        NavigationView {
+//            VStack {
+//                Form {
+//                    Section(header: Text("Map")) {
+//                        Button {
+//                            isShowingSearchView = true
+//                        } label: {
+//                            Text("Show Map")
+//                        }
+//                        .sheet(isPresented: $isShowingSearchView) {
+//                            SearchView()
+//                        }
+//                    }
+//
+//                    Section(header: Text("Trip Details")) {
+//                        TextField("Title", text: $title)
+//                        TextField("Destination", text: $destination)
+//                        TextField("Description", text: $description)
+//                    }
+//
+//                    Section(header: Text("Date")) {
+//                        DatePicker("Start Date", selection: $startDate, in: Date()...)
+//                        DatePicker("End Date", selection: $endDate, in: startDate...)
+//                    }
+//
+//                    Section(header: Text("Image")) {
+//                        Button(action: {
+//                            isShowingImagePicker = true
+//                        }) {
+//                            VStack {
+//                                if let image = selectedImage {
+//                                    Image(uiImage: image)
+//                                        .resizable()
+//                                        .scaledToFill()
+//                                        .frame(height: 200)
+//                                        .clipped()
+//                                } else {
+//                                    Image(systemName: "photo")
+//                                        .resizable()
+//                                        .aspectRatio(contentMode: .fit)
+//                                        .frame(width: 60, height: 60)
+//                                }
+//                            }
+//                        }
+//                        .sheet(isPresented: $isShowingImagePicker) {
+//                            ImagePicker(selectedImage: $selectedImage)
+//                        }
+//                    }
+//
+//                    Section(header: Text("Budget")) {
+//                        TextField("Budget", value: $budget, formatter: NumberFormatter())
+//                            .keyboardType(.decimalPad)
+//                    }
+//                }
+//            }
+//            .navigationBarTitle("Create Trip")
+//            .navigationBarItems(trailing:
+//                Button(action: {
+//                    saveTrip()
+//                }) {
+//                    Text("Save")
+//                }
+//            )
+//            .alert(isPresented: $showAlert) {
+//                Alert(title: Text("Invalid Input"),
+//                      message: Text("Please fill in all the fields with valid data."),
+//                      dismissButton: .default(Text("OK")))
+//            }
+//        }
+//    }
+//
+//    private func saveTrip() {
+//        guard validateInput() else {
+//            showAlert = true
+//            return
+//        }
+//
+//        let userID = try! AuthenticationManager.shared.getAuthenticatedUser().uid
+//        let newTrip = SingleTrip(userId: userID,
+//                                 title: title,
+//                                 destination: destination,
+//                                 description: description,
+//                                 imageName: "",
+//                                 startDate: startDate,
+//                                 endDate: endDate,
+//                                 budget: budget,
+//                                 image: selectedImage)
+//
+////        do {
+////            let currUid = try! AuthenticationManager.shared.getAuthenticatedUser().uid
+////            try dbManager.sharedDB.createTrip(trip: newTrip, for: currUid)
+////            print("Trying to create trips")
+////            tripManager.loadTrips()
+////            presentationMode.wrappedValue.dismiss()
+////        } catch {
+////            print("Error saving trip: \(error)")
+////        }
+//        tripManager.createTrip(trip: newTrip)
+//        presentationMode.wrappedValue.dismiss()
+//    }
+//
+//    private func validateInput() -> Bool {
+//        if title.isEmpty || destination.isEmpty || description.isEmpty || budget <= 0 {
+//            return false
+//        }
+//        return true
+//    }
+//}
+//
 
 struct ImagePicker: UIViewControllerRepresentable {
         @Binding var selectedImage: UIImage?
